@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  checker:
+    image: webdevops/php-nginx:8.2-alpine
+    environment:
+      DB_HOST: example.localhost
+      DB_NAME: example_db
+      DB_USER: example_pass
+      DB_PASS: pass_123456789
+      AUTH_USERNAME: accessyourweb
+      AUTH_PASSWORD: 1234567898
+    volumes:
+      - ./:/app
+    ports:
+      - "8080:80"
